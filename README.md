@@ -14,7 +14,7 @@
   </header>
   <main>
     <h1>Carlos Roberto Silva | WDD 130</h1>
-    <img src="images/profile.jpg" alt="Hello, my name is Carlos Roberto Silva" width="200">
+    <img src="profile.jpg" alt="Hello, my name is Carlos Roberto Silva" width="200">
     <p>Hello! My name is Carlos Roberto Silva and I am from Brazil. I enjoy Martial Arts.</p>
   </main>
   <footer>
