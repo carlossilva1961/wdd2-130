@@ -17,12 +17,12 @@
   </header>
   <main>
     <h1>Carlos Roberto Silva | WDD 130</h1>
-    <img src="images/profile.jpg" alt="Hello, my name is Carlos Roberto Silva" width="200">
+    <img src="profile.jpg" alt="Hello, my name is Carlos Roberto Silva" width="200">
     <p>Hello! My name is Carlos Roberto Silva and I am from Joao Pessoa,Paraiba State, Brazil. I enjoy coding, hiking, and playing guitar.</p>
   </main>
   <aside>
-    <h2>California, USA</h2>
-    <img src="images/joaopessoa.jpg" alt="A scenic view of Joao Pessoa" width="200">
+    <h2>Joao Pessoa, Paraiba State, Brazil</h2>
+    <img src="joaopessoa.jpg" alt="A scenic view of Joao Pessoa" width="200">
     <p>Paraiba is a state on the Northeast coast of the Brazil. It is known for its diverse geography, including beaches, mountains, and deserts. It is also home to Dinassaur Valley and the largest Sugar Cane Plantation in the Country.</p>
   </aside>
   <footer>
