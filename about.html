@@ -4,8 +4,41 @@
     <title>About Us a Company! - Rapid Adventures</title>
     <link href="styles/rafting.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+        }
+        header, main, footer {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
+    <video id="bg-video" autoplay muted loop>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <header>
         <img src="https://drive.google.com/uc?export=view&id=YOUR_LOGO_ID" alt="Rafting Logo">
         <nav>
@@ -22,9 +55,9 @@
             <h1>Rapid Adventures</h1>
             <article>
                 <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Happy Clients" class="float-right">
-                <p>Founded in 1995 by outdoor enthusiast and seasoned rafter Marco Silva, Silva’s White Water Rafting began as a small, family-operated business in Colorado, offering guided trips down the Arkansas River. Marco’s vision was simple yet ambitious: to provide safe, exhilarating rafting experiences accessible to adventurers of all ages and skill levels. Through a combination of expert guides, top-tier safety protocols, and a passion for the sport, SWWR quickly earned a reputation for excellence. By the early 2000s, the company had expanded to multiple rivers across the Western U.S., including the Colorado, Salmon, and Snake Rivers, cementing its status as a leader in the whitewater rafting industry.
+                <p>Founded in 1995 by outdoor enthusiast and seasoned rafter Marco Silva, Silva's White Water Rafting began as a small, family-operated business in Colorado, offering guided trips down the Arkansas River. Marco's vision was simple yet ambitious: to provide safe, exhilarating rafting experiences accessible to adventurers of all ages and skill levels. Through a combination of expert guides, top-tier safety protocols, and a passion for the sport, SWWR quickly earned a reputation for excellence. By the early 2000s, the company had expanded to multiple rivers across the Western U.S., including the Colorado, Salmon, and Snake Rivers, cementing its status as a leader in the whitewater rafting industry.
 
-                Today, SWWR dominates 56% of the U.S. rafting market, a testament to its unwavering commitment to quality, customer satisfaction, and environmental stewardship. Over the years, the company has introduced innovative programs, such as adaptive rafting for individuals with disabilities and eco-friendly expeditions that emphasize conservation. SWWR has also played a pivotal role in promoting whitewater tourism, partnering with local communities to boost regional economies while preserving natural waterways. With a fleet of state-of-the-art rafts, a team of highly trained professionals, and a dedication to creating unforgettable adventures, Silva’s White Water Rafting continues to set the standard for excellence in outdoor recreation, inspiring generations of thrill-seekers to embrace the power and beauty of wild rivers.</p>
+                Today, SWWR dominates 56% of the U.S. rafting market, a testament to its unwavering commitment to quality, customer satisfaction, and environmental stewardship. Over the years, the company has introduced innovative programs, such as adaptive rafting for individuals with disabilities and eco-friendly expeditions that emphasize conservation. SWWR has also played a pivotal role in promoting whitewater tourism, partnering with local communities to boost regional economies while preserving natural waterways. With a fleet of state-of-the-art rafts, a team of highly trained professionals, and a dedication to creating unforgettable adventures, Silva's White Water Rafting continues to set the standard for excellence in outdoor recreation, inspiring generations of thrill-seekers to embrace the power and beauty of wild rivers.</p>
             </article>
         </div>
 
