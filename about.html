@@ -1,46 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Us a Company! - Rapid Adventures</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rapid Adventures</title>
     <link href="styles/rafting.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
+        /* Added CSS for better text visibility and styling */
         body {
-            margin: 0;
-            padding: 0;
+            color: #FFFF00; /* Bright yellow text */
+            font-family: 'Open Sans', sans-serif;
             position: relative;
         }
-        body::after {
-            content: "";
-            position: fixed;
+        
+        /* Text shadow for better contrast */
+        h1, h2, h3, p, figcaption, a {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        
+        /* Larger titles */
+        h1 {
+            font-size: 3.5rem; /* Doubled from typical 1.75rem */
+        }
+        
+        h2 {
+            font-size: 2.5rem; /* Doubled from typical 1.25rem */
+        }
+        
+        /* Semi-transparent background for text content */
+        article, .history, .adventures {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        /* Fix for image display */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Video background styling */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero video {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
             z-index: -1;
-            background: rgba(0, 0, 0, 0.5);
         }
-        #bg-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -2;
-        }
-        header, main, footer {
+        
+        .hero-content {
             position: relative;
             z-index: 1;
+            padding: 40px;
         }
     </style>
 </head>
 <body>
-    <video id="bg-video" autoplay muted loop>
-        <source src="video2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
     <header>
-        <img src="https://drive.google.com/uc?export=view&id=YOUR_LOGO_ID" alt="Rafting Logo">
+        <img src="images/SilvaRaftingCompanyLogo4.png" alt="logo.pgn">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -51,14 +85,22 @@
 
     <main>
         <div class="hero">
-            <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Rafting Team">
-            <h1>Rapid Adventures</h1>
-            <article>
-                <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Happy Clients" class="float-right">
-                <p>Founded in 1995 by outdoor enthusiast and seasoned rafter Marco Silva, Silva's White Water Rafting began as a small, family-operated business in Colorado, offering guided trips down the Arkansas River. Marco's vision was simple yet ambitious: to provide safe, exhilarating rafting experiences accessible to adventurers of all ages and skill levels. Through a combination of expert guides, top-tier safety protocols, and a passion for the sport, SWWR quickly earned a reputation for excellence. By the early 2000s, the company had expanded to multiple rivers across the Western U.S., including the Colorado, Salmon, and Snake Rivers, cementing its status as a leader in the whitewater rafting industry.
-
-                Today, SWWR dominates 56% of the U.S. rafting market, a testament to its unwavering commitment to quality, customer satisfaction, and environmental stewardship. Over the years, the company has introduced innovative programs, such as adaptive rafting for individuals with disabilities and eco-friendly expeditions that emphasize conservation. SWWR has also played a pivotal role in promoting whitewater tourism, partnering with local communities to boost regional economies while preserving natural waterways. With a fleet of state-of-the-art rafts, a team of highly trained professionals, and a dedication to creating unforgettable adventures, Silva's White Water Rafting continues to set the standard for excellence in outdoor recreation, inspiring generations of thrill-seekers to embrace the power and beauty of wild rivers.</p>
-            </article>
+            <!-- Added video background -->
+            <video autoplay muted loop id="bgVideo">
+                <source src="images/rafting-video.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="images/Team SWWR 7.jpg" alt="Rafting Team">
+            </video>
+            
+            <div class="hero-content">
+                <h1>Rapid Adventures</h1>
+                <article>
+                    <img src="images/Team SWWR 5.jpg" alt="Happy Clients" class="float-right">
+                    <p>Founded in 1995 by outdoor enthusiast and seasoned rafter Marco Silva, Silva's White Water Rafting began as a small, family-operated business in Colorado, offering guided trips down the Arkansas River. Marco's vision was simple yet ambitious: to provide safe, exhilarating rafting experiences accessible to adventurers of all ages and skill levels. Through a combination of expert guides, top-tier safety protocols, and a passion for the sport, SWWR quickly earned a reputation for excellence. By the early 2000s, the company had expanded to multiple rivers across the Western U.S., including the Colorado, Salmon, and Snake Rivers, cementing its status as a leader in the whitewater rafting industry.</p>
+                    
+                    <p>Today, SWWR dominates 56% of the U.S. rafting market, a testament to its unwavering commitment to quality, customer satisfaction, and environmental stewardship. Over the years, the company has introduced innovative programs, such as adaptive rafting for individuals with disabilities and eco-friendly expeditions that emphasize conservation. SWWR has also played a pivotal role in promoting whitewater tourism, partnering with local communities to boost regional economies while preserving natural waterways. With a fleet of state-of-the-art rafts, a team of highly trained professionals, and a dedication to creating unforgettable adventures, Silva's White Water Rafting continues to set the standard for excellence in outdoor recreation, inspiring generations of thrill-seekers to embrace the power and beauty of wild rivers.</p>
+                </article>
+            </div>
         </div>
 
         <section class="history">
@@ -69,11 +111,26 @@
         <section class="adventures">
             <h2>Adventure Awaits You!</h2>
             <div class="gallery">
-                <img src="BigMallard.jpg" alt="Colorado River">
-                <img src="HalfDayAdventure.jpg" alt="Snake River">
-                <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Salmon River">
-                <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Family Trip">
-                <img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Team Building">
+                <figure>
+                    <img src="images/LosDientesdelDiablo.jpg" alt="Colorado River">
+                    <figcaption>Colorado River</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/pexels-must-bee.jpg" alt="Snake River">
+                    <figcaption>Snake River</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/pexels-tomfisk.jpg" alt="Salmon River">
+                    <figcaption>Salmon River</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/pexels-must-bee.jpg" alt="Family Trip">
+                    <figcaption>Family Trip</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Team SWWR.jpg" alt="Team Building">
+                    <figcaption>Team Building</figcaption>
+                </figure>
             </div>
         </section>
     </main>
@@ -81,9 +138,9 @@
     <footer>
         <p>© 2023 Rapid Adventures | Carlos Roberto Silva</p>
         <div class="social">
-            <a href="#"><img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Facebook"></a>
-            <a href="#"><img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Twitter"></a>
-            <a href="#"><img src="https://drive.google.com/drive/folders/1UyIjC5RC8uP1agCENacCdlCuYSsr4h6u" alt="Instagram"></a>
+            <a href="#"><img src="Facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="X logo.png" alt="Twitter"></a>
+            <a href="#"><img src="Instagram.jpg" alt="Instagram"></a>
         </div>
     </footer>
 </body>
