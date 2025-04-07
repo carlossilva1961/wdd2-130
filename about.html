@@ -7,21 +7,19 @@
     <link href="styles/rafting.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        /* Improved text visibility */
+
         body {
-            color: #FFFF00; /* Bright yellow text */
+            color: #FFFF00; 
             font-family: 'Open Sans', sans-serif;
             position: relative;
             margin: 0;
             padding: 0;
         }
-        
-        /* Text shadow for better contrast */
+              
         h1, h2, h3, p, figcaption, a, footer p {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        /* Doubled title sizes */
         h1 {
             font-size: 3.5rem;
         }
@@ -30,7 +28,6 @@
             font-size: 2.5rem;
         }
         
-        /* Semi-transparent backgrounds for text */
         article, .history, .adventures {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
@@ -38,7 +35,6 @@
             margin: 15px 0;
         }
         
-        /* Header styling */
         header {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 15px 30px;
@@ -54,7 +50,6 @@
             font-weight: bold;
         }
         
-        /* Hero section with video background */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -76,7 +71,7 @@
         }
         
         .hero img.hero-image {
-            display: none; /* Hide the original image when video is present */
+            display: none; 
         }
         
         .hero-content {
@@ -93,7 +88,6 @@
             border-radius: 8px;
         }
         
-        /* Gallery styling */
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -119,7 +113,6 @@
             margin-top: 8px;
         }
         
-        /* Footer styling */
         footer {
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -131,7 +124,6 @@
             margin: 0 10px;
         }
         
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -166,7 +158,6 @@
             }
         }
         
-        /* Fallback when video doesn't load */
         .no-video .hero-video {
             display: none;
         }
@@ -178,8 +169,6 @@
         }
     </style>
 </head>
-<body>
-    <!-- Video background will be added by JavaScript -->
     <header>
         <img src="images/SilvaRaftingCompanyLogo4.png" alt="Rapid Adventures">
         <nav>
@@ -192,11 +181,11 @@
 
     <main>
         <div class="hero">
-            <!-- Video background -->
+           
             <video autoplay muted loop class="hero-video">
                 <source src="images/rafting-video.mp4" type="video/mp4">
             </video>
-            <!-- Original hero image (fallback) -->
+            
             <img src="images/Team SWWR 7.jpg" alt="Rafting Team" class="hero-image">
             
             <div class="hero-content">
@@ -252,14 +241,13 @@
     </footer>
 
     <script>
-        // Check if video can play, otherwise show fallback image
+        
         document.addEventListener('DOMContentLoaded', function() {
             const video = document.querySelector('.hero-video');
             video.addEventListener('error', function() {
                 document.querySelector('.hero').classList.add('no-video');
             });
             
-            // For mobile devices that don't autoplay videos
             if (/Mobi|Android/i.test(navigator.userAgent)) {
                 const isVideoPlaying = video => !!(
                     video.currentTime > 0 && 
