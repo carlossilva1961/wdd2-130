@@ -7,55 +7,94 @@
     <link href="styles/rafting.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <style>
-        /* Added CSS for better text visibility and styling */
+        /* Main styling for visibility */
         body {
             color: #FFFF00; /* Bright yellow text */
             font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
             position: relative;
         }
         
-        /* Text shadow for better contrast */
-        h1, h2, h3, p, figcaption, a {
+        /* Text shadow for all text elements */
+        h1, h2, h3, p, figcaption, a, footer p {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         
-        /* Larger titles */
+        /* Doubled title sizes */
         h1 {
-            font-size: 3.5rem; /* Doubled from typical 1.75rem */
+            font-size: 3.5rem;
+            margin-top: 0;
         }
         
         h2 {
-            font-size: 2.5rem; /* Doubled from typical 1.25rem */
+            font-size: 2.5rem;
         }
         
-        /* Semi-transparent background for text content */
-        article, .history, .adventures {
-            background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent backgrounds for readability */
+        article, .history, .adventures, header {
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
             margin: 15px 0;
         }
         
-        /* Fix for image display */
+        /* Gallery styling */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 20px;
+            justify-content: center;
+        }
+        
+        .gallery figure {
+            width: calc(33% - 20px);
+            min-width: 250px;
+            margin: 0;
         }
         
         .gallery img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 8px;
         }
         
-        /* Video background styling */
+        .gallery figcaption {
+            text-align: center;
+            margin-top: 8px;
+        }
+        
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+        
+        header img {
+            height: 80px;
+        }
+        
+        nav a {
+            color: #FFFF00;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        
+        /* Hero section with video background */
         .hero {
             position: relative;
-            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         
-        .hero video {
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
@@ -66,15 +105,62 @@
         }
         
         .hero-content {
-            position: relative;
-            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 40px;
+        }
+        
+        article img.float-right {
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        
+        /* Footer styling */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .social img {
+            height: 30px;
+            margin: 0 10px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            .gallery figure {
+                width: 100%;
+            }
+            
+            article img.float-right {
+                float: none;
+                margin: 0 auto 20px;
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/SilvaRaftingCompanyLogo4.png" alt="logo.pgn">
+        <img src="images/SilvaRaftingCompanyLogo4.png" alt="Rapid Adventures Logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -85,11 +171,10 @@
 
     <main>
         <div class="hero">
-            <!-- Added video background -->
-            <video autoplay muted loop id="bgVideo">
+            <video autoplay muted loop class="hero-video">
                 <source src="images/rafting-video.mp4" type="video/mp4">
                 <!-- Fallback image if video doesn't load -->
-                <img src="images/Team SWWR 7.jpg" alt="Rafting Team">
+                <img src="images/Team SWWR 7.jpg" alt="Rafting Team Background">
             </video>
             
             <div class="hero-content">
