@@ -3,30 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  Carlos Roberto Silva | WDD 130
-  <meta name="description" content="The home page for Carlos roberto Silva, a student in the WDD 130 course. This page serves as a personal introduction and course assignment.">
+  <title>Carlos Roberto Silva | WDD 130</title>
+  <meta name="description" content="Carlos Roberto Silva's WDD 130 course homepage showcasing Brazilian culture and web development projects at BYU-Idaho">
   <meta name="author" content="Carlos Roberto Silva">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
-      <a href="#">Home</a>
-      <a href="wwr/">Rafting Website</a>
+      <a href="#" class="active">Home</a>
+      <a href="wwr/">Rafting Site</a>
+      <a href="wwr/site-plan-rafting.html">Site Plan</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
     </nav>
   </header>
-  <main>
-    <h1>Carlos Roberto Silva | WDD 130</h1>
-    <img src="profile.jpg" alt="Hello, my name is Carlos Roberto Silva" width="200">
-    <p>Hello! My name is Carlos Roberto Silva and I am from Joao Pessoa,Paraiba State, Brazil. I enjoy coding, hiking, and playing guitar.</p>
-  </main>
-  <aside>
-    <h2>Joao Pessoa, Paraiba State, Brazil</h2>
-    <img src="joaopessoa.jpg" alt="A scenic view of Joao Pessoa" width="200">
-    <p>Paraiba is a state on the Northeast coast of the Brazil. It is known for its diverse geography, including beaches, mountains, and deserts. It is also home to Dinassaur Valley and the largest Sugar Cane Plantation in the Country.</p>
-  </aside>
+  <div class="grid">
+    <main>
+      <h1>Carlos Roberto Silva | WDD 130</h1>
+      <img src="images/profile.webp" alt="Carlos smiling in front of Brazilian landscape" width="200" height="200">
+      <p>Hello! I'm Carlos Roberto Silva, proudly born and raised in João Pessoa, the sun-kissed coastal capital of Brazil's Paraiba state where the sun rises first in the Americas. My life is a vibrant blend of technology and tradition: by day, I'm an enthusiastic web development student mastering the art of creating accessible, high-performance websites; by night, you'll find me strumming my guitar to the rhythms of forró or savoring authentic Brazilian churrasco with family and friends. My coding journey is deeply inspired by my cultural roots—whether I'm designing interfaces that capture the warmth of Brazilian hospitality, optimizing sites to perform as smoothly as our carnival dancers move, or incorporating design elements that reflect our tropical landscapes. Every line of code I write carries a piece of my homeland's spirit, bridging the gap between Brazilian charm and cutting-edge digital experiences.</p>
+      <p>Did you know João Pessoa is where the sun rises first in the Americas? Our city beaches have golden sands and warm waters year-round!</p>
+    </main>
+    <aside class="box">
+      <h2>Joao Pessoa City, Paraíba State, Brazil</h2>
+      <img src="images/joao-pessoa.webp" alt="Ponta do Seixas beach in João Pessoa" width="200" height="133">
+      <p>Paraíba features:</p>
+      <ul>
+        <li>🌅 Easternmost point of the Americas</li>
+        <li>🏖️ 130km of tropical coastline</li>
+        <li>🦕 Dinosaur Valley fossils</li>
+        <li>🎵 Birthplace of forró music</li>
+      </ul>
+    </aside>
+  </div>
   <footer>
-    <p>©2025 🌴 Carlos Roberto Silva🌴 Joao Pessoa, Paraiba State, Brazil</p>
+    <p>©2025 🌴 Carlos Roberto Silva | Rua Horacio Trajano 1945, Cristo Redentor, Joao Pessoa, Paraiba, Brazil, 58071-160 | Phone +55 83 231-45569 🌴 </p>
   </footer>
 </body>
 </html>
