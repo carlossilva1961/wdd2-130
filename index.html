@@ -10,6 +10,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      border: 15px solid #add8e6; /* Light blue frame */
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    h1, h2, strong {
+      color: #0077b6; /* Light blue text for headings & bold */
+    }
+    .profile-img, .city-img {
+      border: 3px solid #add8e6;
+      border-radius: 10px;
+    }
+    p {
+      line-height: 1.5;
+      max-width: 800px;
+      margin: 0 auto 15px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,14 +44,14 @@
   <div class="grid">
     <main>
       <h1>Carlos Roberto Silva | WDD 130</h1>
-      <img src="images/profile.webp" alt="Carlos smiling in front of Brazilian landscape" width="200" height="200">
-      <p>Hello! I'm Carlos Roberto Silva, proudly born and raised in João Pessoa, the sun-kissed coastal capital of Brazil's Paraiba state where the sun rises first in the Americas. My life is a vibrant blend of technology and tradition: by day, I'm an enthusiastic web development student mastering the art of creating accessible, high-performance websites; by night, you'll find me strumming my guitar to the rhythms of forró or savoring authentic Brazilian churrasco with family and friends. My coding journey is deeply inspired by my cultural roots—whether I'm designing interfaces that capture the warmth of Brazilian hospitality, optimizing sites to perform as smoothly as our carnival dancers move, or incorporating design elements that reflect our tropical landscapes. Every line of code I write carries a piece of my homeland's spirit, bridging the gap between Brazilian charm and cutting-edge digital experiences.</p>
-      <p>Did you know João Pessoa is where the sun rises first in the Americas? Our city beaches have golden sands and warm waters year-round!</p>
+      <img src="images/profile.jpeg" alt="Carlos smiling in front of Brazilian landscape" class="profile-img" width="200" height="200">
+      <p>Hello! I'm Carlos Roberto Silva, proudly born and raised in João Pessoa, Brazil—the first place in the Americas to greet the sunrise. I'm a web development student passionate about blending technology with Brazilian culture. By day, I craft accessible websites; by night, I play forró music and enjoy churrasco with loved ones. My coding reflects my roots, merging Brazil's warmth with digital innovation.</p>
+      <p><strong>Fun fact:</strong> João Pessoa boasts golden beaches and the easternmost point of the Americas!</p>
     </main>
     <aside class="box">
       <h2>Joao Pessoa City, Paraíba State, Brazil</h2>
-      <img src="images/joao-pessoa.webp" alt="Ponta do Seixas beach in João Pessoa" width="200" height="133">
-      <p>Paraíba features:</p>
+      <img src="images/joaopessoa.jpeg" alt="Ponta do Seixas beach in João Pessoa" class="city-img" width="300" height="200">
+      <p><strong>Paraíba highlights:</strong></p>
       <ul>
         <li>🌅 Easternmost point of the Americas</li>
         <li>🏖️ 130km of tropical coastline</li>
