@@ -4,136 +4,358 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Whitewater Rafting Adventures</title>
-    <meta name="description" content="Contact Whitewater Rafting Adventures for questions, reservations, or feedback. Find our contact information, location map, and team details.">
+    <meta name="description" content="Contact Whitewater Rafting Adventures for questions, reservations, or feedback.">
     <meta name="author" content="Carlos Silva">
-    <link rel="stylesheet" href="styles/rafting.css">
+    <style>
+        /* BLUE FRAME AND BASE STYLES */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            border: 12px solid #1a6bb0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        /* VIDEO BACKGROUND */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+        
+        /* CONTENT WRAPPER */
+        .content-wrapper {
+            background-color: rgba(255,255,255,0.9);
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header/Nav Styles */
+        header {
+            background: linear-gradient(135deg, #1a6bb0 0%, #15487a 100%);
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .header-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        /* Main Content Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .team-member {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #1a6bb0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .team-member figcaption {
+            margin-top: 0.8rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .team-member span {
+            display: block;
+            color: #1a6bb0;
+            font-weight: 500;
+            margin-top: 0.3rem;
+        }
+
+        /* CEO Specific Styling */
+        .ceo-member {
+            position: relative;
+        }
+        .ceo-member::after {
+            content: "Founder";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ffcc00;
+            color: #15487a;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Form Styles */
+        form {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #1a6bb0 0%, #15487a 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #15487a 0%, #1a6bb0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, rgba(51,51,51,0.9) 0%, rgba(34,34,34,0.9) 100%);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        .social-links {
+            margin: 1rem 0;
+        }
+        .social-links img {
+            width: 36px;
+            margin: 0 0.8rem;
+            transition: transform 0.3s;
+            filter: brightness(0) invert(1);
+        }
+        .social-links img:hover {
+            transform: scale(1.2);
+            filter: brightness(0) invert(0.8);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .header-grid {
+                flex-direction: column;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-grid">
-            <img src="images/logo.png" alt="Rafting Company Logo" class="logo">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="trips.html">Trips</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="contact-container">
-        <div class="contact-hero">
-            <h1>Get in Touch With Us</h1>
-            <p>We're here to answer your questions and help plan your adventure!</p>
-        </div>
-
-        <div class="contact-grid">
-            <section class="contact-info">
-                <h2>Our Location</h2>
-                <address>
-                    <p><strong>Address:</strong><br>
-                    2968 Lazy J Circle<br>
-                    West Valley City, UT 84120</p>
-
-                    <p><strong>Phone:</strong><br>
-                    <a href="tel:8016882930">(801) 688-2930</a></p>
-
-                    <p><strong>Email:</strong><br>
-                    <a href="mailto:carlossilva2@hotmail.com">carlossilva2@hotmail.com</a></p>
-                </address>
-
-                <div class="map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3024.535914479279!2d-111.9886729!3d40.7062175!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1721790174332!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="400" 
-                        allowfullscreen 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Our Location on Google Maps">
-                    </iframe>
-                </div>
-            </section>
-
-            <section class="team-section">
-                <h2>Meet Our Team</h2>
-                <div class="team-grid">
-                    <figure class="team-member">
-                        <img src="images/member1.jpg" alt="John Doe, our experienced river guide">
-                        <figcaption>John Doe<br><span>River Guide</span></figcaption>
-                    </figure>
-                    <figure class="team-member">
-                        <img src="images/member2.jpg" alt="Jane Smith, customer service representative">
-                        <figcaption>Jane Smith<br><span>Customer Service</span></figcaption>
-                    </figure>
-                    <figure class="team-member">
-                        <img src="images/member3.jpg" alt="Sam Johnson, safety officer">
-                        <figcaption>Sam Johnson<br><span>Safety Officer</span></figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section class="contact-form-section">
-                <h2>Send Us a Message</h2>
-                <form class="contact-form" action="process-contact.php" method="post">
-                    <div class="form-group">
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <fieldset class="form-group">
-                        <legend>Purpose of Message:</legend>
-                        <div class="radio-group">
-                            <input type="radio" id="general" name="purpose" value="general" checked>
-                            <label for="general">General Inquiry</label>
-                        </div>
-                        <div class="radio-group">
-                            <input type="radio" id="reservation" name="purpose" value="reservation">
-                            <label for="reservation">Reservation Question</label>
-                        </div>
-                        <div class="radio-group">
-                            <input type="radio" id="suggestion" name="purpose" value="suggestion">
-                            <label for="suggestion">Website Suggestion</label>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-group">
-                        <label for="message">Your Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="subscribe" name="subscribe" value="yes">
-                        <label for="subscribe">Please subscribe me to the monthly newsletter</label>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Whitewater Rafting Adventures | Carlos Silva</p>
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-                    <img src="images/facebookIcon.jpg" alt="Facebook icon">
-                </a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-                    <img src="images/twitterIcon.jpg" alt="Twitter icon">
-                </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
-                    <img src="images/instagramIcon.jpg" alt="Instagram icon">
-                </a>
+    <!-- VIDEO BACKGROUND -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://carlosrobertosilva2.github.io/wdd130/images/river-narrow.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div class="content-wrapper">
+        <header>
+            <div class="header-grid">
+                <img src="https://carlosrobertosilva2.github.io/wdd130/images/logo.png" alt="Rafting Company Logo" class="logo">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="trips.html">Trips</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
             </div>
-        </div>
-        <p><a href="contact-wireframe.jpg" target="_blank">View Contact Page Wireframe</a></p>
-    </footer>
+        </header>
+
+        <main class="contact-container">
+            <div class="contact-hero">
+                <h1>Get in Touch With Us</h1>
+                <p>We're here to answer your questions and help plan your adventure!</p>
+            </div>
+
+            <div class="contact-grid">
+                <section class="contact-info">
+                    <h2>Our Location</h2>
+                    <address>
+                        <p><strong>Address:</strong><br>
+                        2968 Lazy J Circle<br>
+                        West Valley City, UT 84120</p>
+
+                        <p><strong>Phone:</strong><br>
+                        <a href="tel:8016882930">(801) 688-2930</a></p>
+
+                        <p><strong>Email:</strong><br>
+                        <a href="mailto:carlossilva2@hotmail.com">carlossilva2@hotmail.com</a></p>
+                    </address>
+
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3024.535914479279!2d-111.9886729!3d40.7062175!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1721790174332!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="400" 
+                            allowfullscreen 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Our Location on Google Maps">
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="team-section">
+                    <h2>Meet Our Leadership Team</h2>
+                    <div class="team-grid">
+                        <figure class="team-member ceo-member">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Carlos Silva Roberto Silva, CEO and Founder">
+                            <figcaption>Karla Rodrigues Silva<br><span>CEO & Founder</span></figcaption>
+                        </figure>
+                        <figure class="team-member">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Jane Smith, customer service representative">
+                            <figcaption>Jane Smith<br><span>Customer Service Director</span></figcaption>
+                        </figure>
+                        <figure class="team-member">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Sam Johnson, safety officer">
+                            <figcaption>Sam Johnson<br><span>Chief Safety Officer</span></figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <fieldset class="form-group">
+                            <legend>Purpose of Message:</legend>
+                            <div class="radio-group">
+                                <input type="radio" id="general" name="purpose" value="general" checked>
+                                <label for="general">General Inquiry</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="reservation" name="purpose" value="reservation">
+                                <label for="reservation">Reservation Question</label>
+                            </div>
+                            <div class="radio-group">
+                                <input type="radio" id="suggestion" name="purpose" value="suggestion">
+                                <label for="suggestion">Website Suggestion</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                            <label for="subscribe">Please subscribe me to the monthly newsletter</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Whitewater Rafting Adventures | Carlos Silva</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook icon">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter icon">
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram icon">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon">
+                    </a>
+                </div>
+            </div>
+            <p><a href="#" target="_blank">View Contact Page Wireframe</a></p>
+        </footer>
+    </div>
 </body>
-</html>ement to my website
+</html>
