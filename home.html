@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Silva Family Rafting Adventures offers thrilling whitewater rafting trips for all skill levels. Explore our packages, safety standards, and book your adventure today.">
+  <title>Silva Family Rafting Adventures | Trips</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* BACKGROUND IMAGE */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: 
+        linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)),
+        url('images/rafting-bg-optimized.jpg') center/cover fixed;
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    /* FRAME STYLES */    
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 15px solid #3498db;
+      pointer-events: none;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+    
+    body::after {
+      content: "";
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 5px solid rgba(52, 152, 219, 0.3);
+      pointer-events: none;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    /* PAGE CONTENT STYLES */
+    header {
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.9) 100%);
+      padding: 1.5rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .logo img {
+      height: 80px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    nav a.active {
+      background-color: rgba(255,255,255,0.3);
+    }
+
+    main {
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      background-color: rgba(255,255,255,0.8);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .page-header h1 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
+
+    .subtitle {
+      color: #7f8c8d;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    /* TRIPS TABLE */
+    .trips-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .trips-table th, .trips-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .trips-table th {
+      background-color: #3498db;
+      color: white;
+    }
+
+    .trips-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .trips-table tr:hover {
+      background-color: #e6f2ff;
+    }
+
+    /* TRIP CARDS */
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .trip-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .trip-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .trip-details {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .trip-details li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .button:hover {
+      background: #2980b9;
+      border-color: #3498db;
+    }
+
+    /* EQUIPMENT SECTION */
+    .equipment-section {
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .equipment-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .equipment-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background-color: rgba(240,248,255,0.9);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      margin-top: 1rem;
+      color: #2c3e50;
+    }
+
+    /* RESOURCES SECTION */
+    .resources-section {
+      margin: 4rem 0;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .resource-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .resource-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .resource-content {
+      padding: 1.5rem;
+    }
+
+    .resource-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #3498db;
+      font-weight: 600;
+    }
+
+    footer {
+      background: rgba(44, 62, 80, 0.9);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 100;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .trip-grid, .equipment-grid, .testimonial-grid, .resources-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .trips-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo-optimized.png" alt="Silva Family Rafting Adventures Logo" width="200" height="80">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="trips.html" class="active">Trips</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <div class="page-header">
+      <h1>Our Adventure Packages</h1>
+      <p class="subtitle">Choose your perfect whitewater experience with Silva Family Rafting Adventures</p>
+    </div>
+    
+    <!-- TRIPS TABLE -->
+    <table class="trips-table">
+      <thead>
+        <tr>
+          <th>Trip Name</th>
+          <th>Duration</th>
+          <th>Price</th>
+          <th>Difficulty</th>
+          <th>Age Requirement</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Beginner Rapids</td>
+          <td>2 hours</td>
+          <td>$50/person</td>
+          <td>Class I-II</td>
+          <td>8+ years</td>
+          <td><a href="contact.html" class="button">Book Now</a></td>
+        </tr>
+        <tr>
+          <td>Intermediate Challenge</td>
+          <td>4 hours</td>
+          <td>$80/person</td>
+          <td>Class III</td>
+          <td>12+ years</td>
+          <td><a href="contact.html" class="button">Book Now</a></td>
+        </tr>
+        <tr>
+          <td>Advanced Thrill</td>
+          <td>6 hours</td>
+          <td>$120/person</td>
+          <td>Class IV-V</td>
+          <td>16+ years</td>
+          <td><a href="contact.html" class="button">Book Now</a></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="trip-grid">
+      <!-- Beginner Rapids -->
+      <div class="trip-card">
+        <div class="card-image">
+          <img src="images/beginner-trip-optimized.jpg" 
+               alt="Group rafting on calm river with small waves" width="400" height="220">
+        </div>
+        <div class="card-content">
+          <h3>Beginner Rapids</h3>
+          <p>Perfect for first-timers and families with children ages 8+</p>
+          <ul class="trip-details">
+            <li>⏱️ Duration: 2 hours</li>
+            <li>💰 Price: $50/person</li>
+            <li>🌊 Difficulty: Class I-II rapids</li>
+            <li>👨‍👩‍👧‍👦 Group Size: 6-8 people</li>
+            <li>📍 Location: Green River</li>
+          </ul>
+          <a href="contact.html" class="button">Book Now</a>
+        </div>
+      </div>
+      
+      <!-- Intermediate Challenge -->
+      <div class="trip-card">
+        <div class="card-image">
+          <img src="images/intermediate-trip-optimized.jpg" 
+               alt="Rafting through moderate rapids with active paddling" width="400" height="220">
+        </div>
+        <div class="card-content">
+          <h3>Intermediate Challenge</h3>
+          <p>Great for adventurous beginners and families with teens</p>
+          <ul class="trip-details">
+            <li>⏱️ Duration: 4 hours</li>
+            <li>💰 Price: $80/person</li>
+            <li>🌊 Difficulty: Class III rapids</li>
+            <li>👨‍👩‍👧‍👦 Group Size: 6-8 people</li>
+            <li>📍 Location: Snake River Canyon</li>
+          </ul>
+          <a href="contact.html" class="button">Book Now</a>
+        </div>
+      </div>
+      
+      <!-- Advanced Thrill -->
+      <div class="trip-card">
+        <div class="card-image">
+          <img src="images/advanced-trip-optimized.jpg" 
+               alt="Intense whitewater rafting with big waves" width="400" height="220">
+        </div>
+        <div class="card-content">
+          <h3>Advanced Thrill</h3>
+          <p>For experienced rafters only - minimum age 16</p>
+          <ul class="trip-details">
+            <li>⏱️ Duration: 6 hours</li>
+            <li>💰 Price: $120/person</li>
+            <li>🌊 Difficulty: Class IV-V rapids</li>
+            <li>👨‍👩‍👧‍👦 Group Size: 4-6 people</li>
+            <li>📍 Location: Salmon River</li>
+          </ul>
+          <a href="contact.html" class="button">Book Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EQUIPMENT SECTION -->
+    <section class="equipment-section">
+      <h2>Our Top-Quality Equipment</h2>
+      <p>We provide all necessary equipment to ensure your safety and comfort:</p>
+      
+      <div class="equipment-grid">
+        <div class="equipment-item">
+          <img src="images/raft-icon-optimized.png" alt="Whitewater raft" width="60" height="60">
+          <div>
+            <h3>Self-Bailing Rafts</h3>
+            <p>14-16 ft. professional grade rafts</p>
+          </div>
+        </div>
+        
+        <div class="equipment-item">
+          <img src="images/paddle-icon-optimized.png" alt="Paddle" width="60" height="60">
+          <div>
+            <h3>Carbon Fiber Paddles</h3>
+            <p>Lightweight and durable</p>
+          </div>
+        </div>
+        
+        <div class="equipment-item">
+          <img src="images/lifejacket-icon-optimized.png" alt="Life jacket" width="60" height="60">
+          <div>
+            <h3>Type V Life Jackets</h3>
+            <p>Coast Guard approved</p>
+          </div>
+        </div>
+        
+        <div class="equipment-item">
+          <img src="images/helmet-icon-optimized.png" alt="Helmet" width="60" height="60">
+          <div>
+            <h3>Safety Helmets</h3>
+            <p>Impact-resistant with chin straps</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <h2>What Our Adventurers Say</h2>
+      <p>Hear from people who've experienced our trips firsthand</p>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"The beginner trip was perfect for our family. The guides were patient with our kids and made sure everyone felt safe while still having fun!"</p>
+          <div class="testimonial-author">- The Johnson Family</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p>"As an experienced rafter, I was impressed with the quality of equipment and the knowledge of the guides on the advanced trip. Will definitely be back!"</p>
+          <div class="testimonial-author">- Mark T., Adventure Enthusiast</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p>"Our corporate team building trip was unforgettable. The intermediate challenge was the perfect balance of excitement and teamwork."</p>
+          <div class="testimonial-author">- Sarah K., Team Leader</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES SECTION -->
+    <section class="resources-section">
+      <h2>Rafting Resources</h2>
+      <p>Learn more about whitewater rafting from these trusted sources:</p>
+      
+      <div class="resources-grid">
+        <div class="resource-card">
+          <img src="images/safety-resource-optimized.jpg" alt="Rafting safety" width="400" height="150">
+          <div class="resource-content">
+            <h3>American Whitewater</h3>
+            <p>Comprehensive resource for river conservation and rafting safety standards in the US.</p>
+            <a href="https://www.americanwhitewater.org/" target="_blank" rel="noopener">Visit Resource →</a>
+          </div>
+        </div>
+        
+        <div class="resource-card">
+          <img src="images/techniques-resource-optimized.jpg" alt="Rafting techniques" width="400" height="150">
+          <div class="resource-content">
+            <h3>REI Rafting Guide</h3>
+            <p>Expert advice on gear, techniques, and planning your rafting adventure.</p>
+            <a href="https://www.rei.com/learn/expert-advice/whitewater-rafting-beginners.html" target="_blank" rel="noopener">Visit Resource →</a>
+          </div>
+        </div>
+        
+        <div class="resource-card">
+          <img src="images/international-resource-optimized.jpg" alt="International rafting" width="400" height="150">
+          <div class="resource-content">
+            <h3>International Rafting Federation</h3>
+            <p>The official global organization for rafting sports and international safety standards.</p>
+            <a href="https://www.internationalrafting.com/" target="_blank" rel="noopener">Visit Resource →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Silva Family Rafting Adventures | <a href="contact.html">Contact Us</a></p>
+    <div class="social-links">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p><a href="site-plan.html">View Site Plan</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
